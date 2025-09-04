@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { CustomMDX, ScrollToHash } from "@/components";
+import { ScrollToHash } from "@/components";
 import {
   Meta,
   Schema,
@@ -16,10 +16,10 @@ import {
 } from "@once-ui-system/core";
 import { baseURL, about, blog, person } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
-import { getPosts } from "@/utils/utils";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import React from "react";
 import { Posts } from "@/components/blog/Posts";
+import { getPosts } from "@/utils/utils";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "blog", "posts"]);
@@ -39,7 +39,7 @@ export async function generateMetadata({
     : routeParams.slug || "";
 
   const posts = getPosts(["src", "app", "blog", "posts"]);
-  let post = posts.find((post) => post.slug === slugPath);
+  const post = posts.find((post) => post.slug === slugPath);
 
   if (!post) return {};
 
@@ -58,7 +58,7 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
     ? routeParams.slug.join("/")
     : routeParams.slug || "";
 
-  let post = getPosts(["src", "app", "blog", "posts"]).find((post) => post.slug === slugPath);
+  const post = getPosts(["src", "app", "blog", "posts"]).find((post) => post.slug === slugPath);
 
   if (!post) {
     notFound();
@@ -123,7 +123,6 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
             />
           )}
           <Column as="article" maxWidth="s">
-            <CustomMDX source={post.content} />
           </Column>
           <Column fillWidth gap="40" horizontal="center" marginTop="40">
             <Line maxWidth="40" />

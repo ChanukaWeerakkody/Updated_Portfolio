@@ -23,7 +23,7 @@ const person: Person = {
 
 const newsletter: Newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  title: <>Subscribe to {person.firstName}&apos;s Newsletter</>,
   description: <>My weekly newsletter about creativity and engineering</>,
 };
 
@@ -56,7 +56,7 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
+  title: `${person.name}&apos;s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: <>Crafting innovative solutions through clean, efficient code</>,
   featured: {
@@ -72,8 +72,8 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Chanuka Weerakkody, a software engineer at Aventure , where I build
-      robust and scalable
+      I&apos;m Chanuka Weerakkody, a software engineer at Aventure, where I
+      build robust and scalable
       <br /> server-side solutions. Passionate about architecting efficient
       systems and APIs.
     </>
@@ -101,7 +101,7 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        I'm a dedicated backend developer with a passion for building
+        I&apos;m a dedicated backend developer with a passion for building
         high-performance systems and scalable architectures. With expertise in
         modern backend technologies, I specialize in creating efficient,
         maintainable solutions that solve complex business challenges. My
@@ -350,4 +350,3 @@ const gallery: Gallery = {
 };
 
 export { person, social, newsletter, home, about, blog, work, gallery };
-

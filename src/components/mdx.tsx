@@ -26,188 +26,188 @@
 //   Line,
 // } from "@once-ui-system/core";
 
-// type CustomLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
-//   href: string;
-//   children: ReactNode;
-// };
+// // type CustomLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+// //   href: string;
+// //   children: ReactNode;
+// // };
 
-// function CustomLink({ href, children, ...props }: CustomLinkProps) {
-//   if (href.startsWith("/")) {
-//     return (
-//       <SmartLink href={href} {...props}>
-//         {children}
-//       </SmartLink>
-//     );
-//   }
+// // function CustomLink({ href, children, ...props }: CustomLinkProps) {
+// //   if (href.startsWith("/")) {
+// //     return (
+// //       <SmartLink href={href} {...props}>
+// //         {children}
+// //       </SmartLink>
+// //     );
+// //   }
 
-//   if (href.startsWith("#")) {
-//     return (
-//       <a href={href} {...props}>
-//         {children}
-//       </a>
-//     );
-//   }
-
-//   return (
-//     <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
-//       {children}
-//     </a>
-//   );
-// }
-
-// // function createImage({ alt, src, ...props }: MediaProps & { src: string }) {
-// //   if (!src) {
-// //     console.error("Media requires a valid 'src' property.");
-// //     return null;
+// //   if (href.startsWith("#")) {
+// //     return (
+// //       <a href={href} {...props}>
+// //         {children}
+// //       </a>
+// //     );
 // //   }
 
 // //   return (
-// //     <Media
-// //       marginTop="8"
-// //       marginBottom="16"
-// //       enlarge
-// //       radius="m"
-// //       border="neutral-alpha-medium"
-// //       sizes="(max-width: 960px) 100vw, 960px"
-// //       alt={alt}
-// //       src={src}
-// //       {...props}
-// //     />
+// //     <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
+// //       {children}
+// //     </a>
 // //   );
 // // }
 
-// function slugify(str: string): string {
-//   return str
-//     .toLowerCase()
-//     .replace(/\s+/g, "-") // Replace spaces with -
-//     .replace(/&/g, "-and-") // Replace & with 'and'
-//     .replace(/[^\w\-]+/g, "") // Remove all non-word characters except for -
-//     .replace(/\-\-+/g, "-"); // Replace multiple - with single -
-// }
+// // // function createImage({ alt, src, ...props }: MediaProps & { src: string }) {
+// // //   if (!src) {
+// // //     console.error("Media requires a valid 'src' property.");
+// // //     return null;
+// // //   }
 
-// function createHeading(as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") {
-//   const CustomHeading = ({
-//     children,
-//     ...props
-//   }: Omit<React.ComponentProps<typeof HeadingLink>, "as" | "id">) => {
-//     const slug = slugify(children as string);
-//     return (
-//       <HeadingLink marginTop="24" marginBottom="12" as={as} id={slug} {...props}>
-//         {children}
-//       </HeadingLink>
-//     );
-//   };
+// // //   return (
+// // //     <Media
+// // //       marginTop="8"
+// // //       marginBottom="16"
+// // //       enlarge
+// // //       radius="m"
+// // //       border="neutral-alpha-medium"
+// // //       sizes="(max-width: 960px) 100vw, 960px"
+// // //       alt={alt}
+// // //       src={src}
+// // //       {...props}
+// // //     />
+// // //   );
+// // // }
 
-//   CustomHeading.displayName = `${as}`;
+// // function slugify(str: string): string {
+// //   return str
+// //     .toLowerCase()
+// //     .replace(/\s+/g, "-") // Replace spaces with -
+// //     .replace(/&/g, "-and-") // Replace & with 'and'
+// //     .replace(/[^\w\-]+/g, "") // Remove all non-word characters except for -
+// //     .replace(/\-\-+/g, "-"); // Replace multiple - with single -
+// // }
 
-//   return CustomHeading;
-// }
+// // function createHeading(as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6") {
+// //   const CustomHeading = ({
+// //     children,
+// //     ...props
+// //   }: Omit<React.ComponentProps<typeof HeadingLink>, "as" | "id">) => {
+// //     const slug = slugify(children as string);
+// //     return (
+// //       <HeadingLink marginTop="24" marginBottom="12" as={as} id={slug} {...props}>
+// //         {children}
+// //       </HeadingLink>
+// //     );
+// //   };
 
-// function createParagraph({ children }: TextProps) {
-//   return (
-//     <Text
-//       style={{ lineHeight: "175%" }}
-//       variant="body-default-m"
-//       onBackground="neutral-medium"
-//       marginTop="8"
-//       marginBottom="12"
-//     >
-//       {children}
-//     </Text>
-//   );
-// }
+// //   CustomHeading.displayName = `${as}`;
 
-// function createInlineCode({ children }: { children: ReactNode }) {
-//   return <InlineCode>{children}</InlineCode>;
-// }
+// //   return CustomHeading;
+// // }
 
-// function createCodeBlock(props: any) {
-//   // For pre tags that contain code blocks
-//   if (props.children && props.children.props && props.children.props.className) {
-//     const { className, children } = props.children.props;
+// // function createParagraph({ children }: TextProps) {
+// //   return (
+// //     <Text
+// //       style={{ lineHeight: "175%" }}
+// //       variant="body-default-m"
+// //       onBackground="neutral-medium"
+// //       marginTop="8"
+// //       marginBottom="12"
+// //     >
+// //       {children}
+// //     </Text>
+// //   );
+// // }
 
-//     // Extract language from className (format: language-xxx)
-//     const language = className.replace("language-", "");
-//     const label = language.charAt(0).toUpperCase() + language.slice(1);
+// // function createInlineCode({ children }: { children: ReactNode }) {
+// //   return <InlineCode>{children}</InlineCode>;
+// // }
 
-//     return (
-//       <CodeBlock
-//         marginTop="8"
-//         marginBottom="16"
-//         codes={[
-//           {
-//             code: children,
-//             language,
-//             label,
-//           },
-//         ]}
-//         copyButton={true}
-//       />
-//     );
-//   }
+// // function createCodeBlock(props: any) {
+// //   // For pre tags that contain code blocks
+// //   if (props.children && props.children.props && props.children.props.className) {
+// //     const { className, children } = props.children.props;
 
-//   // Fallback for other pre tags or empty code blocks
-//   return <pre {...props} />;
-// }
+// //     // Extract language from className (format: language-xxx)
+// //     const language = className.replace("language-", "");
+// //     const label = language.charAt(0).toUpperCase() + language.slice(1);
 
-// function createList({ children }: { children: ReactNode }) {
-//   return <List>{children}</List>;
-// }
+// //     return (
+// //       <CodeBlock
+// //         marginTop="8"
+// //         marginBottom="16"
+// //         codes={[
+// //           {
+// //             code: children,
+// //             language,
+// //             label,
+// //           },
+// //         ]}
+// //         copyButton={true}
+// //       />
+// //     );
+// //   }
 
-// function createListItem({ children }: { children: ReactNode }) {
-//   return (
-//     <ListItem marginTop="4" marginBottom="8" style={{ lineHeight: "175%" }}>
-//       {children}
-//     </ListItem>
-//   );
-// }
+// //   // Fallback for other pre tags or empty code blocks
+// //   return <pre {...props} />;
+// // }
 
-// function createHR() {
-//   return (
-//     <Row fillWidth horizontal="center">
-//       <Line maxWidth="40" />
-//     </Row>
-//   );
-// }
+// // function createList({ children }: { children: ReactNode }) {
+// //   return <List>{children}</List>;
+// // }
 
-// const components = {
-//   // p: createParagraph as any,
-//   // h1: createHeading("h1") as any,
-//   // h2: createHeading("h2") as any,
-//   // h3: createHeading("h3") as any,
-//   // h4: createHeading("h4") as any,
-//   // h5: createHeading("h5") as any,
-//   // h6: createHeading("h6") as any,
-//   // //img: createImage as any,
-//   // a: CustomLink as any,
-//   // code: createInlineCode as any,
-//   // pre: createCodeBlock as any,
-//   // ol: createList as any,
-//   // ul: createList as any,
-//   // li: createListItem as any,
-//   // hr: createHR as any,
-//   //Heading,
-//   //Text,
-//   //CodeBlock,
-//   //InlineCode,
-//   //Accordion,
-//   //AccordionGroup,
-//   //Table,
-//   //Feedback,
-//   //Button,
-//   //Card,
-//   //Grid,
-//   //Row,
-//   //Column,
-//   //Icon,
-//   //Media,
-//   //SmartLink,
-// };
+// // function createListItem({ children }: { children: ReactNode }) {
+// //   return (
+// //     <ListItem marginTop="4" marginBottom="8" style={{ lineHeight: "175%" }}>
+// //       {children}
+// //     </ListItem>
+// //   );
+// // }
 
-// // type CustomMDXProps = MDXRemoteProps & {
-// //   components?: typeof components;
+// // function createHR() {
+// //   return (
+// //     <Row fillWidth horizontal="center">
+// //       <Line maxWidth="40" />
+// //     </Row>
+// //   );
+// // }
+
+// // const components = {
+// //   // p: createParagraph as any,
+// //   // h1: createHeading("h1") as any,
+// //   // h2: createHeading("h2") as any,
+// //   // h3: createHeading("h3") as any,
+// //   // h4: createHeading("h4") as any,
+// //   // h5: createHeading("h5") as any,
+// //   // h6: createHeading("h6") as any,
+// //   // //img: createImage as any,
+// //   // a: CustomLink as any,
+// //   // code: createInlineCode as any,
+// //   // pre: createCodeBlock as any,
+// //   // ol: createList as any,
+// //   // ul: createList as any,
+// //   // li: createListItem as any,
+// //   // hr: createHR as any,
+// //   //Heading,
+// //   //Text,
+// //   //CodeBlock,
+// //   //InlineCode,
+// //   //Accordion,
+// //   //AccordionGroup,
+// //   //Table,
+// //   //Feedback,
+// //   //Button,
+// //   //Card,
+// //   //Grid,
+// //   //Row,
+// //   //Column,
+// //   //Icon,
+// //   //Media,
+// //   //SmartLink,
 // // };
 
-// // export function CustomMDX(props: CustomMDXProps) {
-// //   return <MDXRemote {...props} components={{ ...components, ...(props.components || {}) }} />;
-// // }
+// // // type CustomMDXProps = MDXRemoteProps & {
+// // //   components?: typeof components;
+// // // };
+
+// // // export function CustomMDX(props: CustomMDXProps) {
+// // //   return <MDXRemote {...props} components={{ ...components, ...(props.components || {}) }} />;
+// // // }
