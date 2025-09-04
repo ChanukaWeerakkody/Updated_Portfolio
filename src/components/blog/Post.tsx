@@ -38,8 +38,19 @@ export default function Post({ post, thumbnail, direction }: PostProps) {
         />
       )}
       <Row fillWidth>
-        <Column maxWidth={28} paddingY="24" paddingX="l" gap="20" vertical="center">
+        <Column
+          maxWidth={28}
+          paddingY="24"
+          paddingX="l"
+          gap="20"
+          vertical="center"
+        >
           <Row gap="24" vertical="center">
+            <Text variant="heading-strong-l" wrap="balance">
+              {/* {post.metadata.title} */}
+              🚀 Write Cleaner Backend APIs with NestJS: 7 Practical Tips for
+              Developers
+            </Text>
             <Row vertical="center" gap="16">
               <Avatar src={person.avatar} size="s" />
               <Text variant="label-default-s">{person.name}</Text>
@@ -48,9 +59,6 @@ export default function Post({ post, thumbnail, direction }: PostProps) {
               {formatDate(post.metadata.publishedAt, false)}
             </Text>
           </Row>
-          <Text variant="heading-strong-l" wrap="balance">
-            {post.metadata.title}
-          </Text>
           {post.metadata.tag && (
             <Text variant="label-strong-s" onBackground="neutral-weak">
               {post.metadata.tag}

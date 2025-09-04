@@ -1,15 +1,24 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import type {
+  About,
+  Blog,
+  Gallery,
+  Home,
+  Newsletter,
+  Person,
+  Social,
+  Work,
+} from "@/types";
 import { Line, Logo, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Chanuka",
+  lastName: "Weerakkody",
+  name: "Chanuka Weerakkody",
+  role: "Associate Software Engineer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "chanuka.weerakkody123@gmail.com",
+  location: "Asia/Colombo",
+  languages: ["English", "Sinhala"],
 };
 
 const newsletter: Newsletter = {
@@ -24,18 +33,18 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/ChanukaWeerakkody",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/chanuka-weerakkody-62589b264/",
   },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
-  },
+  // {
+  //   name: "Threads",
+  //   icon: "threads",
+  //   link: "https://www.threads.com/@once_ui",
+  // },
   {
     name: "Email",
     icon: "email",
@@ -49,13 +58,11 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Crafting innovative solutions through clean, efficient code</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
-        <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Featured work
         </Text>
@@ -65,14 +72,10 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Selene, a design engineer at{" "}
-      <Logo
-        dark
-        icon="/trademarks/wordmark-dark.svg"
-        style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}
-      />
-      , where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      I'm Chanuka Weerakkody, a software engineer at Aventure , where I build
+      robust and scalable
+      <br /> server-side solutions. Passionate about architecting efficient
+      systems and APIs.
     </>
   ),
 };
@@ -98,9 +101,12 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        I'm a dedicated backend developer with a passion for building
+        high-performance systems and scalable architectures. With expertise in
+        modern backend technologies, I specialize in creating efficient,
+        maintainable solutions that solve complex business challenges. My
+        approach combines clean code principles with a focus on performance
+        optimization and system reliability.
       </>
     ),
   },
@@ -109,42 +115,71 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Aventure IT",
+        timeframe: "2025 - Present",
+        role: "Associate Software Engineer",
         achievements: [
-          <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
-          </>,
+          <p key="ach-1">
+            Developed and optimized backend services with <b>Nest.js</b> and{" "}
+            <b>MySQL</b>, improving API response times by <b>35%</b>.
+          </p>,
+          <p key="ach-2">
+            Implemented <b>scalable microservices architecture</b> and
+            containerized deployments with <b>Docker</b>, increasing system
+            reliability and maintainability.
+          </p>,
+          <p key="ach-3">
+            Designed and maintained <b>secure RESTful APIs</b> for high-traffic
+            applications, enabling seamless integration with frontend and
+            third-party services.
+          </p>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
+        // images: [
+        //   // optional: leave the array empty if you don't want to display images
+        //   {
+        //     src: "/images/projects/project-01/cover-01.jpg",
+        //     alt: "Once UI Project",
+        //     width: 16,
+        //     height: 9,
+        //   },
+        // ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Arimax Solutions",
+        timeframe: "July 2024 - December 2024",
+        role: "(Trainee) Associate Software Engineer",
         achievements: [
-          <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
+          <p key="ach-3">
+            Developed and maintained responsive web applications using modern
+            JavaScript frameworks, implementing both frontend interfaces and
+            backend APIs.
+          </p>,
+          <p key="ach-4">
+            Collaborated with cross-functional teams to deliver full-stack
+            solutions, reducing development time by 30% through efficient code
+            reuse and component architecture.
+          </p>,
+          <p key="ach-5">
+            Implemented RESTful APIs and integrated third-party services,
+            enhancing application functionality and user experience.
+          </p>,
+        ],
+        images: [],
+      },
+      {
+        company: "Redcode Solutions",
+        timeframe: "January 2024 - June 2024",
+        role: "Intern Software Engineer",
+        achievements: [
+          <p key="ach-3">
+            Developed a design system that unified the brand across multiple
+            platforms, improving design consistency by 40%.
+          </p>,
+          <p key="ach-4">
+            Led a cross-functional team to launch a new product line,
+            contributing to a 15% increase in overall company revenue.
+          </p>,
         ],
         images: [],
       },
@@ -155,75 +190,92 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Institue of Software Engineering",
+        description: <>Learned complete Software Engineering curriculum.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "GCE A/L - Vidyarathna University College",
+        description: <>Completed Advanced Level in 2020.</>,
+      },
+      {
+        name: "GCE O/L - Bandaragama Central College",
+        description: <>Completed Ordinary Level in 2017.</>,
       },
     ],
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Technical skills",
+    title: "Technical Skills",
     skills: [
       {
-        title: "Figma",
+        title: "Java & Frameworks",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>
+            Experienced in Java, Spring Boot, JavaFX, Hibernate, and enterprise
+            app development.
+          </>
         ),
         tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
+          { name: "Java", icon: "java" },
+          { name: "Spring", icon: "spring" },
+          { name: "Spring Boot", icon: "springboot" },
+          { name: "JavaFX", icon: "javafx" },
+          { name: "Hibernate", icon: "hibernate" },
+          { name: "OOP", icon: "oop" },
+          { name: "Design Patterns", icon: "design" },
+          { name: "Microservices", icon: "microservice" },
+          { name: "REST APIs", icon: "rest" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        title: "Next.js",
+        title: "Frontend Development",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>
+            Proficient in building responsive UIs with React, Next.js, and
+            modern web technologies.
+          </>
         ),
         tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
+          { name: "HTML", icon: "html" },
+          { name: "CSS", icon: "css" },
+          { name: "JavaScript", icon: "javascript" },
+          { name: "Bootstrap", icon: "bootstrap" },
+          { name: "jQuery", icon: "jquery" },
+          { name: "React", icon: "react" },
+          { name: "Next.js", icon: "nextjs" },
+          { name: "UI/UX", icon: "figma" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+        images: [],
+      },
+      {
+        title: "Backend Development",
+        description: (
+          <>
+            Building scalable APIs with Node.js, Express.js, and Nest.js using
+            SQL and NoSQL databases.
+          </>
+        ),
+        tags: [
+          { name: "Node.js", icon: "nodejs" },
+          { name: "Express.js", icon: "express" },
+          { name: "Nest.js", icon: "nestjs" },
+          { name: "MySQL", icon: "mysql" },
+          { name: "MongoDB", icon: "mongodb" },
         ],
-      },  
+        images: [],
+      },
+      {
+        title: "Mobile Development",
+        description: (
+          <>Cross-platform mobile development with Flutter and React Native.</>
+        ),
+        tags: [
+          { name: "Flutter", icon: "flutter" },
+          { name: "React Native", icon: "react" },
+        ],
+        images: [],
+      },
     ],
   },
 };
@@ -298,3 +350,4 @@ const gallery: Gallery = {
 };
 
 export { person, social, newsletter, home, about, blog, work, gallery };
+
