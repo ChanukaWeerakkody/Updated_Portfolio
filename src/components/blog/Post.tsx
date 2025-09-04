@@ -47,9 +47,7 @@ export default function Post({ post, thumbnail, direction }: PostProps) {
         >
           <Row gap="24" vertical="center">
             <Text variant="heading-strong-l" wrap="balance">
-              {/* {post.metadata.title} */}
-              🚀 Write Cleaner Backend APIs with NestJS: 7 Practical Tips for
-              Developers
+              {post.metadata.title}
             </Text>
             <Row vertical="center" gap="16">
               <Avatar src={person.avatar} size="s" />
