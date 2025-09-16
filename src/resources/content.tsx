@@ -19,12 +19,18 @@ const person: Person = {
   email: "chanuka.weerakkody123@gmail.com",
   location: "Asia/Colombo",
   languages: ["English", "Sinhala"],
+  bio: "A passionate software engineer with expertise in full-stack development, specializing in building scalable and efficient web applications. I love solving complex problems and creating seamless user experiences.",
 };
 
 const newsletter: Newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}&apos;s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  title: <>Subscribe to My Newsletter</>,
+  description: (
+    <>
+      Get the latest updates on my work, articles, and insights on software
+      development
+    </>
+  ),
 };
 
 const social: Social = [
@@ -46,7 +52,7 @@ const social: Social = [
   {
     name: "Email",
     icon: "email",
-    link: `mailto:${person.email}`,
+    link: `mailto:chanuka.weerakkody123@gmail.com`,
   },
 ];
 
@@ -54,15 +60,21 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name} Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Crafting innovative solutions through clean, efficient code</>,
+  title: `${person.name} | ${person.role}`,
+  description: `Portfolio of ${person.name} - ${person.role} from ${person.location}. ${person.bio}`,
+  headline: (
+    <>
+      Building digital experiences
+      <br />
+      that make an impact
+    </>
+  ),
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
         <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+          Featured Work
         </Text>
       </Row>
     ),
@@ -70,10 +82,9 @@ const home: Home = {
   },
   subline: (
     <>
-      I&apos;m Chanuka Weerakkody, a software engineer at Aventure, where I
-      build robust and scalable
-      <br /> server-side solutions. Passionate about architecting efficient
-      systems and APIs.
+      I&apos;m {person.firstName}, a {person.role} with a passion for creating
+      <br />
+      elegant solutions to complex problems through code.
     </>
   ),
 };
@@ -82,10 +93,10 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `Learn more about ${person.name}, a ${person.role} from ${person.location}`,
   tableOfContent: {
     display: true,
-    subItems: false,
+    subItems: true,
   },
   avatar: {
     display: true,
@@ -93,24 +104,23 @@ const about: About = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://cal.com/chanuka",
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        I&apos;m a dedicated backend developer with a passion for building
-        high-performance systems and scalable architectures. With expertise in
-        modern backend technologies, I specialize in creating efficient,
-        maintainable solutions that solve complex business challenges. My
-        approach combines clean code principles with a focus on performance
-        optimization and system reliability.
+        I&apos;m {person.firstName}, a {person.role} with a strong foundation in
+        software development and a passion for creating efficient, scalable, and
+        user-friendly applications. With expertise in both frontend and backend
+        technologies, I enjoy working on projects that challenge me to learn and
+        grow as a developer.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Work Experience",
     experiences: [
       {
@@ -133,219 +143,84 @@ const about: About = {
             third-party services.
           </p>,
         ],
-        images: [],
-        // images: [
-        //   // optional: leave the array empty if you don't want to display images
-        //   {
-        //     src: "/images/projects/project-01/cover-01.jpg",
-        //     alt: "Once UI Project",
-        //     width: 16,
-        //     height: 9,
-        //   },
-        // ],
-      },
-      {
-        company: "Arimax Solutions",
-        timeframe: "July 2024 - December 2024",
-        role: "(Trainee) Associate Software Engineer",
-        achievements: [
-          <p key="ach-3">
-            Developed and maintained responsive web applications using modern
-            JavaScript frameworks, implementing both frontend interfaces and
-            backend APIs.
-          </p>,
-          <p key="ach-4">
-            Collaborated with cross-functional teams to deliver full-stack
-            solutions, reducing development time by 30% through efficient code
-            reuse and component architecture.
-          </p>,
-          <p key="ach-5">
-            Implemented RESTful APIs and integrated third-party services,
-            enhancing application functionality and user experience.
-          </p>,
-        ],
-        images: [],
-      },
-      {
-        company: "Redcode Solutions",
-        timeframe: "January 2024 - June 2024",
-        role: "Intern Software Engineer",
-        achievements: [
-          <p key="ach-3">
-            Developed a design system that unified the brand across multiple
-            platforms, improving design consistency by 40%.
-          </p>,
-          <p key="ach-4">
-            Led a cross-functional team to launch a new product line,
-            contributing to a 15% increase in overall company revenue.
-          </p>,
-        ],
-        images: [],
       },
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: true,
+    title: "Education",
     institutions: [
       {
-        name: "Institue of Software Engineering",
-        description: <>Learned complete Software Engineering curriculum.</>,
+        name: "Institute of Software Engineering",
+        description: "Advanced Diploma in Software Engineering",
       },
       {
         name: "GCE A/L - Vidyarathna University College",
-        description: <>Completed Advanced Level in 2020.</>,
-      },
-      {
-        name: "GCE O/L - Bandaragama Central College",
-        description: <>Completed Ordinary Level in 2017.</>,
+        description: "Completed Advanced Level in 2020",
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Technical Skills",
     skills: [
       {
-        title: "Java & Frameworks",
-        description: (
-          <>
-            Experienced in Java, Spring Boot, JavaFX, Hibernate, and enterprise
-            app development.
-          </>
-        ),
-        tags: [
-          { name: "Java", icon: "java" },
-          { name: "Spring", icon: "spring" },
-          { name: "Spring Boot", icon: "springboot" },
-          { name: "JavaFX", icon: "javafx" },
-          { name: "Hibernate", icon: "hibernate" },
-          { name: "OOP", icon: "oop" },
-          { name: "Design Patterns", icon: "design" },
-          { name: "Microservices", icon: "microservice" },
-          { name: "REST APIs", icon: "rest" },
-        ],
-        images: [],
-      },
-      {
         title: "Frontend Development",
-        description: (
-          <>
-            Proficient in building responsive UIs with React, Next.js, and
-            modern web technologies.
-          </>
-        ),
+        description: "Building responsive and interactive user interfaces",
         tags: [
-          { name: "HTML", icon: "html" },
-          { name: "CSS", icon: "css" },
-          { name: "JavaScript", icon: "javascript" },
-          { name: "Bootstrap", icon: "bootstrap" },
-          { name: "jQuery", icon: "jquery" },
           { name: "React", icon: "react" },
           { name: "Next.js", icon: "nextjs" },
-          { name: "UI/UX", icon: "figma" },
+          { name: "TypeScript", icon: "typescript" },
+          { name: "JavaScript", icon: "javascript" },
+          { name: "HTML/CSS", icon: "html" },
         ],
-        images: [],
       },
       {
         title: "Backend Development",
-        description: (
-          <>
-            Building scalable APIs with Node.js, Express.js, and Nest.js using
-            SQL and NoSQL databases.
-          </>
-        ),
+        description: "Building robust and scalable server-side applications",
         tags: [
           { name: "Node.js", icon: "nodejs" },
-          { name: "Express.js", icon: "express" },
-          { name: "Nest.js", icon: "nestjs" },
+          { name: "NestJS", icon: "nestjs" },
+          { name: "Express", icon: "express" },
           { name: "MySQL", icon: "mysql" },
           { name: "MongoDB", icon: "mongodb" },
         ],
-        images: [],
       },
       {
-        title: "Mobile Development",
-        description: (
-          <>Cross-platform mobile development with Flutter and React Native.</>
-        ),
+        title: "DevOps & Tools",
+        description: "CI/CD, containerization, and development tools",
         tags: [
-          { name: "Flutter", icon: "flutter" },
-          { name: "React Native", icon: "react" },
+          { name: "Docker", icon: "docker" },
+          { name: "Git", icon: "git" },
+          { name: "GitHub Actions", icon: "github" },
+          { name: "AWS", icon: "aws" },
+          { name: "Linux", icon: "linux" },
         ],
-        images: [],
       },
     ],
   },
-};
-
-const blog: Blog = {
-  path: "/blog",
-  label: "Blog",
-  title: `Blog – ${person.name}`,
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
 };
 
 const work: Work = {
   path: "/work",
   label: "Work",
   title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  description: `Explore the latest projects by ${person.name} - ${person.role} from ${person.location}`,
+};
+
+const blog: Blog = {
+  path: "/blog",
+  label: "Blog",
+  title: `Blog – ${person.name}`,
+  description: `Read the latest articles and insights by ${person.name} on software development and technology`,
 };
 
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
-  images: [
-    {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-  ],
+  title: `Gallery – ${person.name}`,
+  description: `A collection of photos and visuals from ${person.name}'s work and experiences`,
+  images: [],
 };
 
 export { person, social, newsletter, home, about, blog, work, gallery };

@@ -1,4 +1,5 @@
 import { Row, IconButton, SmartLink, Text } from "@once-ui-system/core";
+import Link from "next/link";
 import { person, social } from "@/resources";
 import styles from "./Footer.module.scss";
 
@@ -29,7 +30,10 @@ export const Footer = () => {
       >
         <Text variant="body-default-s" onBackground="neutral-strong">
           <Text onBackground="neutral-weak">
-            &copy; {person.name}. All rights reserved.
+            &copy; {currentYear} {person.name}. All rights reserved.{" "}
+            <Link href="/privacy" className="hover:underline">
+              Privacy Policy
+            </Link>
           </Text>
         </Text>
         <Row gap="16">
@@ -48,7 +52,6 @@ export const Footer = () => {
           )}
         </Row>
       </Row>
-      <Row height="80" hide s={{ hide: false }} />
     </Row>
   );
 };
