@@ -56,7 +56,7 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}&apos;s Portfolio`,
+  title: `${person.name} Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: <>Crafting innovative solutions through clean, efficient code</>,
   featured: {
@@ -91,6 +91,7 @@ const about: About = {
   },
   avatar: {
     display: true,
+    image: "/images/hero_image.png",
   },
   calendar: {
     display: true,

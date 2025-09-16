@@ -1,51 +1,40 @@
-Magic Portfolio was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+.
+# 🚀 Chanuka Weerakkody — Personal Portfolio
 
-## Documentation
+A modern, responsive portfolio built with **Next.js**, **Once UI React**, and **TypeScript**, showcasing my work, skills, and professional journey.
 
-Docs available at: [docs.once-ui.com](https://docs.once-ui.com/docs/magic-portfolio/quick-start)
+---
 
-## Features
+## ✨ Features
 
-### Once UI
-- All tokens, components & features of [Once UI](https://once-ui.com)
+- ⚡ **Next.js** for performance, SEO, and server-side rendering  
+- 🎨 **Once UI React** for elegant, modern UI components  
+- 🔐 **TypeScript** for reliable, type-safe, and scalable code  
+- 📱 Fully responsive design—optimized for all devices  
+- 🌙 Light & Dark mode support  
+- 🧭 Smooth navigation with client-side routing  
 
-### SEO
-- Automatic open-graph and X image generation with next/og
-- Automatic schema and metadata generation based on the content file
+---
 
-### Design
-- Responsive layout optimized for all screen sizes
-- Timeless design without heavy animations and motion
-- Endless customization options through [data attributes](https://once-ui.com/docs/theming)
+## 🛠️ Tech Stack
 
-### Content
-- Render sections conditionally based on the content file
-- Enable or disable pages for blog, work, gallery and about / CV
-- Generate and display social links automatically
-- Set up password protection for URLs
+- ⚡ **Framework**: [Next.js](https://nextjs.org/)  
+- 🎨 **UI Library**: [Once UI React](https://once-ui.com/)  
+- 🔐 **Language**: [TypeScript](https://www.typescriptlang.org/)  
+- 🎭 **Styling**: TailwindCSS (if you’re using it)  
+- 🚀 **Deployment**: Vercel  
 
-### Localization
-- A localized, earlier version of Magic Portfolio is available with the next-intl library
-- To use localization, switch to the 'i18n' branch
+### 🔧 Quick Glance
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![Once UI](https://img.shields.io/badge/Once%20UI-5A67D8?style=for-the-badge&logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
-## Creators
+---
 
-Lorant One: [Threads](https://www.threads.net/@lorant.one) / [LinkedIn](https://www.linkedin.com/in/lorant-one/)
+## ⚙️ Getting Started
 
-## Get involved
-
-- Join the Design Engineers Club on [Discord](https://discord.com/invite/5EyAQ4eNdS) and share your project with us!
-- Deployed your docs? Share it on the [Once UI Hub](https://once-ui.com/hub) too! We feature our favorite apps on our landing page.
-
-## License
-
-Distributed under the CC BY-NC 4.0 License.
-- Attribution is required.
-- Commercial usage is not allowed.
-- You can extend the license to [Dopler CC](https://dopler.app/license) by purchasing a [Once UI Pro](https://once-ui.com/pricing) license.
-
-See `LICENSE.txt` for more information.
-
-## Deploy with Vercel
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&project-name=portfolio&repository-name=portfolio&redirect-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&demo-title=Magic%20Portfolio&demo-description=Showcase%20your%20designers%20or%20developer%20portfolio&demo-url=https%3A%2F%2Fdemo.magic-portfolio.com&demo-image=%2F%2Fraw.githubusercontent.com%2Fonce-ui-system%2Fmagic-portfolio%2Fmain%2Fpublic%2Fimages%2Fog%2Fhome.jpg)
+### 1. Clone the repository  
+```bash
+git clone https://github.com/ChanukaWeerakkody/Updated_Portfolio.git
+cd Updated_Portfolio

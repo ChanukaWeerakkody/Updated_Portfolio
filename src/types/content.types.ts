@@ -1,11 +1,10 @@
 import type { IconName } from "@/resources/icons";
-import type { zones } from "tzdata";
 
 /**
  * IANA time zone string (e.g., 'Asia/Calcutta', 'Europe/Vienna').
  * See: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
  */
-export type IANATimeZone = Extract<keyof typeof zones, string>; // Narrow to string keys for React usage
+export type IANATimeZone = string;
 
 /**
  * Represents a person featured in the portfolio.
@@ -117,6 +116,7 @@ export interface About extends BasePageConfig {
   avatar: {
     /** Whether to display the avatar */
     display: boolean;
+    image?: string;
   };
   /** Calendar section configuration */
   calendar: {
