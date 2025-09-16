@@ -15,7 +15,7 @@ const person: Person = {
   lastName: "Weerakkody",
   name: "Chanuka Weerakkody",
   role: "Associate Software Engineer",
-  avatar: "/images/avatar.jpg",
+  avatar: "/images/hero_image.png",
   email: "chanuka.weerakkody123@gmail.com",
   location: "Asia/Colombo",
   languages: ["English", "Sinhala"],
@@ -28,8 +28,6 @@ const newsletter: Newsletter = {
 };
 
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
   {
     name: "GitHub",
     icon: "github",
@@ -40,11 +38,11 @@ const social: Social = [
     icon: "linkedin",
     link: "https://www.linkedin.com/in/chanuka-weerakkody-62589b264/",
   },
-  // {
-  //   name: "Threads",
-  //   icon: "threads",
-  //   link: "https://www.threads.com/@once_ui",
-  // },
+  {
+    name: "Medium",
+    icon: "medium",
+    link: "https://medium.com/@chanuka.weerakkody123",
+  },
   {
     name: "Email",
     icon: "email",
@@ -284,7 +282,7 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
+  title: `Blog – ${person.name}`,
   description: `Read what ${person.name} has been up to recently`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
