@@ -15,7 +15,7 @@ const person: Person = {
   lastName: "Weerakkody",
   name: "Chanuka Weerakkody",
   role: "Associate Software Engineer",
-  avatar: "/images/hero_image.png",
+  avatar: "/images/avatar.jpg",
   email: "chanuka.weerakkody123@gmail.com",
   location: "Asia/Colombo",
   languages: ["English", "Sinhala"],
@@ -58,7 +58,7 @@ const social: Social = [
 
 const home: Home = {
   path: "/",
-  image: "/images/og/home.jpg",
+  image: "/images/avatar.jpg",
   label: "Home",
   title: `${person.name} | ${person.role}`,
   description: `Portfolio of ${person.name} - ${person.role} from ${person.location}. ${person.bio}`,
@@ -100,7 +100,7 @@ const about: About = {
   },
   avatar: {
     display: true,
-    image: "/images/hero_image.png",
+    image: "/images/avatar.jpg",
   },
   calendar: {
     display: true,
@@ -144,6 +144,45 @@ const about: About = {
           </p>,
         ],
       },
+      {
+        company: "Arimax Solutions",
+        timeframe: "2024 Aug - 2025 Jan",
+        role: "Trainee Associate Software Engineer",
+        achievements: [
+          <p key="ach-1">
+            Developed and optimized backend services with <b>Java Spring Boot</b> and{" "}
+            <b>MySQL</b>, improving API response times by <b>35%</b>.
+          </p>,
+          <p key="ach-2">
+            Built responsive frontend interfaces using <b>React</b> and <b>TypeScript</b>, enhancing user experience and reducing load times.
+          </p>,
+          <p key="ach-3">
+            Designed and maintained <b>secure RESTful APIs</b> for high-traffic applications, enabling seamless integration between frontend and backend services.
+          </p>,
+          <p key="ach-4">
+            Managed database schemas and optimized queries in <b>MySQL</b>, ensuring data consistency and efficient storage for large-scale applications.
+          </p>,
+        ],
+      },
+      {
+        company: "RedCode Solutions",
+        timeframe: "2024 Jan - 2024 Jul",
+        role: "Intern Software Engineer",
+        achievements: [
+          <p key="ach-1">
+            Developed and optimized backend services with <b>Nest.js</b> and <b>MySQL</b>, improving API efficiency and reliability.
+          </p>,
+          <p key="ach-2">
+            Built dynamic and responsive frontend interfaces using <b>React</b> and <b>TypeScript</b>, enhancing user experience and usability.
+          </p>,
+          <p key="ach-3">
+            Implemented <b>database migrations and seeders</b> in <b>MySQL</b>, ensuring consistent and reproducible development and testing environments.
+          </p>,
+          <p key="ach-4">
+            Collaborated on <b>RESTful API design</b> and integration, connecting frontend components with backend services for seamless data flow.
+          </p>,
+        ],
+      }
     ],
   },
   studies: {
@@ -151,13 +190,13 @@ const about: About = {
     title: "Education",
     institutions: [
       {
-        name: "Institute of Software Engineering",
-        description: "Advanced Diploma in Software Engineering",
+        name: "Wrexham University - UK",
+        description: "BSc in Computer Science",
       },
       {
-        name: "GCE A/L - Vidyarathna University College",
-        description: "Completed Advanced Level in 2020",
-      },
+        name: "Institute of Software Engineering",
+        description: "Advanced Diploma in Software Engineering",
+      }
     ],
   },
   technical: {
