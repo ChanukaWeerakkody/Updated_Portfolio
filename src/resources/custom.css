@@ -1,54 +1,52 @@
-/* :root {
-  /*
-  /* Example setup for custom colors */
-/* Generate at: https://once-ui.com/customize */
-/*
-  --scheme-brand-100: #08002f;
-  --scheme-brand-200:  #04025c;
-  --scheme-brand-300:  #1f398e;
-  --scheme-brand-400:  #3856ae;
-  --scheme-brand-500:  #5071cc;
-  --scheme-brand-600:  #6f94f1;
-  --scheme-brand-700:  #8db3ff;
-  --scheme-brand-800:  #b2dbff;
-  --scheme-brand-900:  #bfe8ff;
-  --scheme-brand-1000: #ccf6ff;
-  --scheme-brand-1100: #d2fcff;
-  --scheme-brand-1200: #d2fcff;
-  --scheme-brand-600-10: rgba(111,148,241,0.1);
-  --scheme-brand-600-30: rgba(111,148,241,0.3);
-  --scheme-brand-600-50: rgba(111,148,241,0.5);
+/* ── Hero Card – theme-aware custom properties ────────────────────────────── */
+:root {
+  /* Dark mode defaults */
+  --hero-card-bg: linear-gradient(135deg, rgba(9, 14, 24, 0.96), rgba(15, 23, 42, 0.92));
+  --hero-card-border: rgba(113, 113, 122, 0.28);
+  --hero-card-shadow: 0 30px 80px rgba(2, 6, 23, 0.45);
 
-  --scheme-accent-100:  #030b10;
-  --scheme-accent-200:  #0d181d;
-  --scheme-accent-300:  #364248;
-  --scheme-accent-400:  #505d64;
-  --scheme-accent-500:  #69777e;
-  --scheme-accent-600:  #8a989f;
-  --scheme-accent-700:  #a8b7bf;
-  --scheme-accent-800:  #c8d7df;
-  --scheme-accent-900:  #d5e4ec;
-  --scheme-accent-1000: #e2f1f9;
-  --scheme-accent-1100: #e9f8ff;
-  --scheme-accent-1200: #efffff;
-  --scheme-accent-600-10: rgba(138,152,159,0.1);
-  --scheme-accent-600-30: rgba(138,152,159,0.3);
-  --scheme-accent-600-50: rgba(138,152,159,0.5);
+  --hero-grid-line-h: rgba(255, 255, 255, 0.04);
+  --hero-grid-line-v: rgba(255, 255, 255, 0.03);
 
-  --scheme-neutral-100:  #020b10;
-  --scheme-neutral-200:  #0b181d;
-  --scheme-neutral-300:  #344248;
-  --scheme-neutral-400:  #4f5d64;
-  --scheme-neutral-500:  #68777e;
-  --scheme-neutral-600:  #89989f;
-  --scheme-neutral-700:  #a7b7be;
-  --scheme-neutral-800:  #c7d7df;
-  --scheme-neutral-900:  #d4e4ec;
-  --scheme-neutral-1000: #e1f2f9;
-  --scheme-neutral-1100: #e7f8ff;
-  --scheme-neutral-1200: #eeffff;
-  --scheme-neutral-600-10: rgba(137,152,159,0.1);
-  --scheme-neutral-600-30: rgba(137,152,159,0.3);
-  --scheme-neutral-600-50: rgba(137,152,159,0.5);
-  /*
-}*/
+  --hero-glow-purple: rgba(139, 92, 246, 0.25);
+  --hero-glow-blue:   rgba(59, 130, 246, 0.18);
+
+  --hero-headline-color: #f8fafc;
+  --hero-subtext-color:  rgba(148, 163, 184, 0.9);
+
+  --hero-ticker-bg:     linear-gradient(90deg, rgba(9, 14, 24, 0.88), rgba(15, 23, 42, 0.82));
+  --hero-ticker-border: rgba(113, 113, 122, 0.22);
+  --hero-ticker-label:  rgba(148, 163, 184, 0.5);
+
+  --hero-pill-bg:     rgba(255, 255, 255, 0.06);
+  --hero-pill-border: rgba(255, 255, 255, 0.10);
+  --hero-pill-color:  rgba(203, 213, 225, 0.82);
+
+  --hero-fade-color: 9, 14, 24;   /* used in rgba() inside JS */
+}
+
+[data-theme="light"] {
+  /* Light mode – pale sky-blue glassmorphism */
+  --hero-card-bg: linear-gradient(135deg, rgba(219, 234, 254, 0.90), rgba(240, 249, 255, 0.95));
+  --hero-card-border: rgba(147, 197, 253, 0.50);
+  --hero-card-shadow: 0 20px 60px rgba(59, 130, 246, 0.12), 0 4px 16px rgba(147, 197, 253, 0.18);
+
+  --hero-grid-line-h: rgba(0, 0, 0, 0.045);
+  --hero-grid-line-v: rgba(0, 0, 0, 0.035);
+
+  --hero-glow-purple: rgba(139, 92, 246, 0.10);
+  --hero-glow-blue:   rgba(59, 130, 246, 0.10);
+
+  --hero-headline-color: #0f172a;
+  --hero-subtext-color:  rgba(51, 65, 85, 0.80);
+
+  --hero-ticker-bg:     linear-gradient(90deg, rgba(214, 232, 255, 0.92), rgba(235, 247, 255, 0.95));
+  --hero-ticker-border: rgba(147, 197, 253, 0.35);
+  --hero-ticker-label:  rgba(71, 85, 105, 0.60);
+
+  --hero-pill-bg:     rgba(59, 130, 246, 0.07);
+  --hero-pill-border: rgba(59, 130, 246, 0.20);
+  --hero-pill-color:  #1e3a5f;
+
+  --hero-fade-color: 214, 232, 255;
+}

@@ -7,21 +7,18 @@ interface ProjectsProps {
   exclude?: string[];
 }
 
+const allProjects = getPosts(["src", "app", "work", "projects"]).sort((a, b) => {
+  return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
+});
+
 export function Projects({ range, exclude }: ProjectsProps) {
-  let allProjects = getPosts(["src", "app", "work", "projects"]);
-
-  // Exclude by slug (exact match)
-  if (exclude && exclude.length > 0) {
-    allProjects = allProjects.filter((post) => !exclude.includes(post.slug));
-  }
-
-  const sortedProjects = allProjects.sort((a, b) => {
-    return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
-  });
+  const filteredProjects = exclude && exclude.length > 0
+    ? allProjects.filter((post) => !exclude.includes(post.slug))
+    : allProjects;
 
   const displayedProjects = range
-    ? sortedProjects.slice(range[0] - 1, range[1] ?? sortedProjects.length)
-    : sortedProjects;
+    ? filteredProjects.slice(range[0] - 1, range[1] ?? filteredProjects.length)
+    : filteredProjects;
 
   return (
     <Column fillWidth gap="xl" marginBottom="40" paddingX="l">

@@ -14,7 +14,7 @@ const person: Person = {
   firstName: "Chanuka",
   lastName: "Weerakkody",
   name: "Chanuka Weerakkody",
-  role: "Associate Software Engineer",
+  role: "Software Engineer",
   avatar: "/images/avatar.jpg",
   email: "chanuka.weerakkody123@gmail.com",
   location: "Asia/Colombo",
@@ -42,7 +42,7 @@ const social: Social = [
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/in/chanuka-weerakkody-62589b264/",
+    link: "https://www.linkedin.com/in/chanuka-weerakkody/",
   },
   {
     name: "Medium",
@@ -60,31 +60,23 @@ const home: Home = {
   path: "/",
   image: "/images/avatar.jpg",
   label: "Home",
-  title: `${person.name} | ${person.role}`,
-  description: `Portfolio of ${person.name} - ${person.role} from ${person.location}. ${person.bio}`,
+  title: `${person.name} | Software Engineer`,
+  description: `Portfolio of ${person.name} – Software Engineer building scalable backend architectures and high-performance systems.`,
   headline: (
     <>
-      Building digital experiences
+      Building Architecture
       <br />
-      that make an impact
+      for Performance
     </>
   ),
   featured: {
-    display: true,
-    title: (
-      <Row gap="12" vertical="center">
-        <Text marginRight="4" onBackground="brand-medium">
-          Featured Work
-        </Text>
-      </Row>
-    ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    display: false,
+    title: <Row gap="12" vertical="center"><Text marginRight="4" onBackground="brand-medium">Trusted Architectures &amp; Tech Stack Core</Text></Row>,
+    href: "/work",
   },
   subline: (
     <>
-      I&apos;m {person.firstName}, a {person.role} with a passion for creating
-      <br />
-      elegant solutions to complex problems through code.
+      I am {person.name}, a Software Engineer with 2+ years of enterprise experience.
     </>
   ),
 };
@@ -126,7 +118,7 @@ const about: About = {
       {
         company: "Aventure IT",
         timeframe: "2025 - Present",
-        role: "Associate Software Engineer",
+        role: "Software Engineer",
         achievements: [
           <p key="ach-1">
             Developed and optimized backend services with <b>Nest.js</b> and{" "}
@@ -204,36 +196,48 @@ const about: About = {
     title: "Technical Skills",
     skills: [
       {
-        title: "Frontend Development",
-        description: "Building responsive and interactive user interfaces",
+        title: "Backend Core",
+        description: "Building high-scale backend systems with modern frameworks and service-oriented architecture.",
+        tags: [
+          { name: "Java (Spring Boot / Spring MVC)", icon: "java" },
+          { name: "PHP (Laravel)", icon: "php" },
+          { name: "Node.js (NestJS / Express.js)", icon: "nodejs" },
+        ],
+      },
+      {
+        title: "Databases & Caching",
+        description: "Designing performant persistence layers with relational, document, and caching technologies.",
+        tags: [
+          { name: "MySQL", icon: "mysql" },
+          { name: "PostgreSQL", icon: "postgresql" },
+          { name: "MongoDB", icon: "mongodb" },
+          { name: "Redis", icon: "redis" },
+          { name: "Mongoose", icon: "mongoose" },
+          { name: "Hibernate", icon: "hibernate" },
+        ],
+      },
+      {
+        title: "Architecture & Tools",
+        description: "Delivering secure, scalable systems through API design, auth, cloud, and automation practices.",
+        tags: [
+          { name: "RESTful API Design", icon: "api" },
+          { name: "JWT Authentication & RBAC", icon: "jwt" },
+          { name: "Microservices Architecture", icon: "microservices" },
+          { name: "Docker", icon: "docker" },
+          { name: "CI/CD Pipelines", icon: "github" },
+          { name: "AWS", icon: "aws" },
+        ],
+      },
+      {
+        title: "Frontend / Mobile",
+        description: "Creating responsive product experiences across web and mobile platforms.",
         tags: [
           { name: "React", icon: "react" },
           { name: "Next.js", icon: "nextjs" },
-          { name: "TypeScript", icon: "typescript" },
+          { name: "Redux", icon: "redux" },
+          { name: "React Native", icon: "reactnative" },
           { name: "JavaScript", icon: "javascript" },
-          { name: "HTML/CSS", icon: "html" },
-        ],
-      },
-      {
-        title: "Backend Development",
-        description: "Building robust and scalable server-side applications",
-        tags: [
-          { name: "Node.js", icon: "nodejs" },
-          { name: "NestJS", icon: "nestjs" },
-          { name: "Express", icon: "express" },
-          { name: "MySQL", icon: "mysql" },
-          { name: "MongoDB", icon: "mongodb" },
-        ],
-      },
-      {
-        title: "DevOps & Tools",
-        description: "CI/CD, containerization, and development tools",
-        tags: [
-          { name: "Docker", icon: "docker" },
-          { name: "Git", icon: "git" },
-          { name: "GitHub Actions", icon: "github" },
-          { name: "AWS", icon: "aws" },
-          { name: "Linux", icon: "linux" },
+          { name: "TypeScript", icon: "typescript" },
         ],
       },
     ],
