@@ -87,8 +87,8 @@ const about: About = {
   title: `About – ${person.name}`,
   description: `Learn more about ${person.name}, a ${person.role} from ${person.location}`,
   tableOfContent: {
-    display: true,
-    subItems: true,
+    display: false,
+    subItems: false,
   },
   avatar: {
     display: true,
