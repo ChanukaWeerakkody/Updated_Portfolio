@@ -45,7 +45,7 @@ const images = [
   },
   // Additional blog post images
   {
-    url: 'https://images.unsplash.com/photo-1627399270231-7d3264532c5b?auto=format&fit=crop&w=1200&q=80',
+    url: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80',
     path: 'public/images/blog/nestjs-apis.jpg'
   },
   {
@@ -57,7 +57,7 @@ const images = [
     path: 'public/images/blog/api-comparison.jpg'
   },
   {
-    url: 'https://images.unsplash.com/photo-1504639725590-34ee98c9aac5?auto=format&fit=crop&w=1200&q=80',
+    url: 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=1200&q=80',
     path: 'public/images/blog/docker-2025.jpg'
   },
   {
