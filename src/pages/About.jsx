@@ -1,22 +1,24 @@
-import React, { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import Lenis from 'lenis';
 import { Toaster } from 'react-hot-toast';
 import { ThemeProvider } from '@/lib/theme-context';
-import MeshBackground from '@/components/MeshBackground';
-import Preloader from '@/components/Preloader';
-import Navbar from '@/components/Navbar';
-import CustomCursor from '@/components/ui/CustomCursor';
-import ScrollProgress from '@/components/ui/ScrollProgress';
-import ThemeCustomizer from '@/components/ThemeCustomizer';
-import Chatbot from '@/components/Chatbot';
-import CommandPalette from '@/components/CommandPalette';
-import ContextMenu from '@/components/ui/ContextMenu';
+
+const MeshBackground = lazy(() => import('@/components/MeshBackground'));
+const Preloader = lazy(() => import('@/components/Preloader'));
+const Navbar = lazy(() => import('@/components/Navbar'));
+const CustomCursor = lazy(() => import('@/components/ui/CustomCursor'));
+const ScrollProgress = lazy(() => import('@/components/ui/ScrollProgress'));
+const ThemeCustomizer = lazy(() => import('@/components/ThemeCustomizer'));
+const Chatbot = lazy(() => import('@/components/Chatbot'));
+const CommandPalette = lazy(() => import('@/components/CommandPalette'));
+const ContextMenu = lazy(() => import('@/components/ui/ContextMenu'));
+const Scene3D = lazy(() => import('@/components/Scene3D'));
+
 import Personal from '@/components/Personal';
 import Experience from '@/components/Experience';
 import Education from '@/components/Education';
 import TechStack from '@/components/TechStack';
 import Footer from '@/components/Footer';
-import Scene3D from '@/components/Scene3D';
 
 export default function About() {
   useEffect(() => {
@@ -40,15 +42,19 @@ export default function About() {
   return (
     <ThemeProvider>
       <Toaster position="bottom-right" toastOptions={{ style: { background: '#333', color: '#fff', borderRadius: '10px' } }} />
-      <Preloader />
-      <CustomCursor />
-      <ScrollProgress />
-      <ThemeCustomizer />
-      <CommandPalette />
-      <Chatbot />
-      <ContextMenu />
-      <MeshBackground />
-      <Navbar />
+
+      <Suspense fallback={null}>
+        <Preloader />
+        <CustomCursor />
+        <ScrollProgress />
+        <ThemeCustomizer />
+        <CommandPalette />
+        <Chatbot />
+        <ContextMenu />
+        <MeshBackground />
+        <Navbar />
+      </Suspense>
+
       <main className="relative pt-20">
         <Personal />
       </main>
@@ -62,7 +68,9 @@ export default function About() {
         <TechStack />
       </main>
       <main className="relative pt-20">
-        <Scene3D />
+        <Suspense fallback={null}>
+          <Scene3D />
+        </Suspense>
       </main>
       <main className="relative pt-20">
         <Footer />
