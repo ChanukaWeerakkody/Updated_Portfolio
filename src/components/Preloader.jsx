@@ -1,20 +1,35 @@
 import React, { useState, useEffect } from 'react';
 
 export default function Preloader() {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return !sessionStorage.getItem('hasLoaded');
+    }
+    return true;
+  });
+
   const [fade, setFade] = useState(false);
 
   useEffect(() => {
-    const t1 = setTimeout(() => setFade(true), 1600);
-    const t2 = setTimeout(() => setVisible(false), 2300);
-    return () => { clearTimeout(t1); clearTimeout(t2); };
-  }, []);
+    if (!visible) return;
+
+    const t1 = setTimeout(() => setFade(true), 800);
+    const t2 = setTimeout(() => {
+      setVisible(false);
+      sessionStorage.setItem('hasLoaded', 'true');
+    }, 1300);
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
+  }, [visible]);
 
   if (!visible) return null;
 
   return (
     <div
-      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background transition-opacity duration-700 ${
+      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background transition-opacity duration-500 ${
         fade ? 'opacity-0' : 'opacity-100'
       }`}
     >

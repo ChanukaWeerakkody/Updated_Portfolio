@@ -1,45 +1,59 @@
 import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useSpring } from 'framer-motion';
 
 export default function CustomCursor() {
-  const [mousePosition, setMousePosition] = useState({ x: -100, y: -100 });
   const [isHovering, setIsHovering] = useState(false);
+  const [isMouseDown, setIsMouseDown] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Smooth & zero-lag cursor physics using Motion Values
+  const springConfig = { damping: 25, stiffness: 400, mass: 0.1 };
+  const cursorX = useSpring(-100, springConfig);
+  const cursorY = useSpring(-100, springConfig);
 
   useEffect(() => {
-    const updateMousePosition = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+    const handleMouseMove = (e) => {
+      cursorX.set(e.clientX);
+      cursorY.set(e.clientY);
+      if (!isVisible) setIsVisible(true);
     };
 
     const handleMouseOver = (e) => {
-      // Check if hovering over a clickable element
       const target = e.target;
-      if (
+      const isInteractive =
         target.tagName?.toLowerCase() === 'button' ||
         target.tagName?.toLowerCase() === 'a' ||
+        target.tagName?.toLowerCase() === 'input' ||
         target.closest('button') ||
         target.closest('a') ||
-        target.classList?.contains('cursor-pointer')
-      ) {
-        setIsHovering(true);
-      } else {
-        setIsHovering(false);
-      }
+        target.classList?.contains('cursor-pointer') ||
+        window.getComputedStyle(target).cursor === 'pointer';
+
+      setIsHovering(!!isInteractive);
     };
 
-    window.addEventListener('mousemove', updateMousePosition);
-    window.addEventListener('mouseover', handleMouseOver);
+    const handleMouseDown = () => setIsMouseDown(true);
+    const handleMouseUp = () => setIsMouseDown(false);
+    const handleMouseLeave = () => setIsVisible(false);
 
-    // Hide native cursor on body
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseover', handleMouseOver);
+    window.addEventListener('mousedown', handleMouseDown);
+    window.addEventListener('mouseup', handleMouseUp);
+    document.body.addEventListener('mouseleave', handleMouseLeave);
+
     document.body.style.cursor = 'none';
 
     return () => {
-      window.removeEventListener('mousemove', updateMousePosition);
+      window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseover', handleMouseOver);
+      window.removeEventListener('mousedown', handleMouseDown);
+      window.removeEventListener('mouseup', handleMouseUp);
+      document.body.removeEventListener('mouseleave', handleMouseLeave);
       document.body.style.cursor = 'auto';
     };
-  }, []);
+  }, [cursorX, cursorY, isVisible]);
 
-  // Hide custom cursor on touch devices
   if (typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches) {
     return null;
   }
@@ -47,22 +61,37 @@ export default function CustomCursor() {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 w-3 h-3 bg-[var(--accent)] rounded-full pointer-events-none z-[9999]"
-        animate={{
-          x: mousePosition.x - 6,
-          y: mousePosition.y - 6,
-          scale: isHovering ? 2 : 1,
+        className="fixed top-0 left-0 w-2.5 h-2.5 bg-[var(--accent)] rounded-full pointer-events-none z-[9999] shadow-[0_0_10px_var(--accent)]"
+        style={{
+          x: cursorX,
+          y: cursorY,
+          translateX: '-50%',
+          translateY: '-50%',
+          opacity: isVisible ? 1 : 0,
         }}
-        transition={{ type: 'tween', ease: 'backOut', duration: 0.1 }}
+        animate={{
+          scale: isMouseDown ? 0.5 : isHovering ? 0 : 1,
+        }}
+        transition={{ duration: 0.15 }}
       />
+
       <motion.div
-        className="fixed top-0 left-0 w-10 h-10 border border-[var(--accent)] rounded-full pointer-events-none z-[9998] opacity-50"
-        animate={{
-          x: mousePosition.x - 20,
-          y: mousePosition.y - 20,
-          scale: isHovering ? 1.5 : 1,
+        className="fixed top-0 left-0 rounded-full pointer-events-none z-[9998] border border-[var(--accent)]/40 backdrop-blur-[1px] bg-[var(--accent)]/5"
+        style={{
+          x: cursorX,
+          y: cursorY,
+          translateX: '-50%',
+          translateY: '-50%',
+          opacity: isVisible ? 1 : 0,
         }}
-        transition={{ type: 'spring', stiffness: 150, damping: 15, mass: 0.2 }}
+        animate={{
+          width: isHovering ? 48 : 32,
+          height: isHovering ? 48 : 32,
+          scale: isMouseDown ? 0.85 : 1,
+          borderColor: isHovering ? 'var(--accent)' : 'rgba(var(--accent-rgb), 0.4)',
+          backgroundColor: isHovering ? 'rgba(var(--accent-rgb), 0.15)' : 'rgba(var(--accent-rgb), 0.03)',
+        }}
+        transition={{ type: 'spring', damping: 20, stiffness: 300, mass: 0.2 }}
       />
     </>
   );

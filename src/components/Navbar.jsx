@@ -61,7 +61,7 @@ export default function Navbar() {
         <motion.nav
           initial={{ y: -80, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 2.3 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
           className="pointer-events-auto"
         >
           <div className="h-20 flex items-center justify-center px-4">

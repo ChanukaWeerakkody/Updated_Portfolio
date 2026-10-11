@@ -36,7 +36,7 @@ export default function Contact() {
   return (
     <ThemeProvider>
       <Toaster position="bottom-right" toastOptions={{ style: { background: '#333', color: '#fff', borderRadius: '10px' } }} />
-      <Preloader />
+      {/* <Preloader /> */}
       <CustomCursor />
       <ScrollProgress />
       <ThemeCustomizer />

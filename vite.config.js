@@ -1,25 +1,27 @@
-import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
-import path from 'path'
-import { fileURLToPath } from 'url'
-import { visualizer } from 'rollup-plugin-visualizer'
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
+import react from '@vitejs/plugin-react'
+import { resolve } from 'path'
 
 export default defineConfig({
-  plugins: [
-    react(),
-    visualizer({
-      filename: './dist/stats.html',
-      open: true,
-      gzipSize: true,
-      brotliSize: true,
-    }),
-  ],
-
+  plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': resolve(import.meta.dirname, './src'),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules/three')) {
+            return 'three';
+          }
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
+            return 'vendor';
+          }
+        }
+      }
+    },
+    chunkSizeWarningLimit: 1000, 
+  }
 })
